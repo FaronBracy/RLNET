@@ -65,9 +65,9 @@ namespace RLNET
         internal RLMouse(GameWindow window)
         {
            
-            window.Mouse.Move += window_MouseMove;
-            window.Mouse.ButtonDown += window_MouseDown;
-            window.Mouse.ButtonUp += window_MouseUp;
+            window.MouseMove += window_MouseMove;
+            window.MouseDown += window_MouseDown;
+            window.MouseUp += window_MouseUp;
         }
 
         internal void Calibrate(int charWidth, int charHeight, int offsetX, int offsetY, float scale)

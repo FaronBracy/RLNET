@@ -466,7 +466,7 @@ namespace RLNET
             GL.Enable(EnableCap.Blend);
             GL.Disable(EnableCap.Lighting);
             GL.Disable(EnableCap.DepthTest);
-            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+            GL.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
             GL.BindTexture(TextureTarget.Texture2D, texId);
             GL.EnableClientState(ArrayCap.VertexArray);
             GL.EnableClientState(ArrayCap.IndexArray);

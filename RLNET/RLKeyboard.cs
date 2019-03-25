@@ -37,13 +37,10 @@ namespace RLNET
         private bool alt;
         private bool shift;
         private bool ctrl;
-        private bool repeating;
 
         internal RLKeyboard(GameWindow gameWindow)
         {
-            gameWindow.KeyDown += gameWindow_KeyDown;
-            repeating = gameWindow.Keyboard.KeyRepeat;
-            
+            gameWindow.KeyDown += gameWindow_KeyDown;           
         }
 
         private void gameWindow_KeyDown(object sender, KeyboardKeyEventArgs e)
@@ -62,7 +59,7 @@ namespace RLNET
             ctrl = (keyState.IsKeyDown(Key.LControl) || keyState.IsKeyDown(Key.RControl));
             alt = (keyState.IsKeyDown(Key.LAlt) || keyState.IsKeyDown(Key.RAlt));
 
-            RLKeyPress newKeyPress = new RLKeyPress((RLKey)e.Key, alt, shift, ctrl, repeating, numLock, capsLock, scrollLock);
+            RLKeyPress newKeyPress = new RLKeyPress((RLKey)e.Key, alt, shift, ctrl, e.IsRepeat, numLock, capsLock, scrollLock);
             if (keyPress != newKeyPress) keyPress = newKeyPress;
         }
 
